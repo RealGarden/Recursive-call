@@ -11,7 +11,7 @@ Global
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
+	EndGlobalSectionlmim35165165
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BFB98A4D-56E9-45DB-9C4D-338B745A5C62}.Debug|x64.ActiveCfg = Debug|x64
 		{BFB98A4D-56E9-45DB-9C4D-338B745A5C62}.Debug|x64.Build.0 = Debug|x64
