@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
-asoidjfisodjfoasjdoifjasodjfoasjdofisjiodf
-int main() {
-	cout << "helloworld" << endl;
 
+int main() {
+	for(int i=0; i<10; i++)	{
+	cout << "helloworld" << endl;
+	}
 	return 0;
 }
