@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void print_moo(long long int num);
+
+int main() {
+	long long int num;
+	cin >> num;
+	print_moo(num);
+}
+//S(k)=s(k-1)+moooo(k+2)개+s(k-1)
+void print_moo(long long int num) {
+	static int count = 0;
+
+	static string  Moo[3000];
+	string o;
+
+	Moo[0] = "moo";
+
+	if (Moo[count].length() >= num) {
+		cout << Moo[count].at(num-1) << endl;
+		return;
+	}
+	count++;
+	if (count > 0) {
+		for (int i = 0;i < count + 2;i++)
+			o.push_back('o');
+
+		Moo[count] = Moo[count - 1] + 'm' + o + Moo[count - 1];
+	}
+
+
+	print_moo(num);
+	return;
+}
+
+
+//경우를 문자열에 저장하여 그 숫자에 해당하는 문자일부를 반환하는 코드
+//첫번째, 메모리 초과 두번째,segmentation fault
+//첫번째는 string배열의 크기를 너무 크게잡아서 문제에서 한정하는 메모리를 초과하였기 때문
+//두번째는 배열크기문제 
+//결론 처음부터 다 뜯어 고쳐야한다..
