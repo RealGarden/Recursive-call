@@ -1,0 +1,20 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+long long trans(long long n, long long t, int cnt) {
+	if (n == 0) return 0/*n * pow(10, cnt)*/;
+	t = trans(n / 2, t, cnt + 1);
+
+	return t + (n % 2)* pow(10, cnt);
+}
+
+int main() {
+	long long n, t = 0;
+	int cnt = 0;
+
+	cin >> n;
+	cout << trans(n, t, cnt);
+
+	return 0;
+}
