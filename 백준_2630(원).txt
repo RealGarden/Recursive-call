@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+#define SIZE 128
+#define COLOR 2
+int paper[SIZE][SIZE] = { 0 };
+static int Count[COLOR] = { 0 };
+
+void cut(int x, int y, int size) {
+	int head = paper[y][x];
+
+	for (int i = y;i < y+size;i++)
+		for (int j = x;j < x+size;j++)
+			if (head != paper[i][j]) {
+				cut(x, y, size / 2);
+				cut(x + size / 2, y, size / 2);
+				cut(x, y + size / 2, size / 2);
+				cut(x + size / 2, y + size / 2, size / 2);
+				return;
+			}
+				
+	if (head == 0)
+		Count[0]++;
+	else if (head == 1)
+		Count[1]++;
+}
+
+int main() {
+	int size;
+	cin >> size;
+	for (int i = 0;i < size;i++) 
+		for (int j = 0;j < size;j++)
+			cin >> paper[i][j];
+	
+	cut(0, 0, size);
+	cout << Count[0] << endl << Count[1] << endl;
+}
